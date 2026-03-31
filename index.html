@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <header class="mobile-header">
+        <div class="menu-icon" id="menu-btn">
+            <span></span><span></span><span></span>
+        </div>
+        <div class="logo">Quiz<span>Master</span></div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <h2 class="sidebar-title">Categories</h2>
+            <nav class="nav-list">
+                <button class="nav-item" onclick="startQuiz('web')"><i class="fas fa-code"></i> Web Dev</button>
+                <button class="nav-item" onclick="startQuiz('ai')"><i class="fas fa-robot"></i> AI & ML</button>
+                <button class="nav-item" onclick="startQuiz('cpp')"><i class="fas fa-terminal"></i> C++</button>
+                <button class="nav-item" onclick="startQuiz('cyber')"><i class="fas fa-user-shield"></i> Cyber</button>
+                <button class="nav-item" onclick="startQuiz('friends')"><i class="fas fa-users"></i> Friends</button>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <section id="home-view" class="view">
+                <div class="hero-card">
+                    <h1 class="logo-large">Quiz<span>Master</span></h1>
+                    <p class="slogan">Pick a category and prove your skills!</p>
+                </div>
+            </section>
+
+            <section id="quiz-view" class="view hidden">
+                <div class="quiz-card" id="main-card">
+                    <div class="card-header">
+                        <span id="progress-text"></span>
+                        <div class="timer-bar"><div id="timer-fill"></div></div>
+                    </div>
+                    <h2 id="question-text">Question loading...</h2>
+                    <div id="options-list"></div>
+                    <div class="quiz-footer">
+                        <button id="next-btn" class="btn-primary">Confirm Answer</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="result-view" class="view hidden">
+                <div class="quiz-card result-card">
+                    <h2 class="gradient-text">Quiz Results</h2>
+                    <div id="summary-container" class="custom-scroll"></div>
+                    <button onclick="location.reload()" class="btn-primary">Back to Home</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
